@@ -1,9 +1,9 @@
 entity MRI is
     port (
-    mri_in      : in std_logic_vector(15 downto 0);
+    mri_in      : in  std_logic_vector(15 downto 0);
     mri_out8    : out std_logic_vector(7 downto 0);  --saida com 8 bit para jump
-    mri_out6    : out std_logic_vector5(7 downto 0); --saida sempre com 6 bit para branch
-    mri_sel     : in std_logic; -- seletor para saber se vai usar 6 ou 8 bit   
+    mri_out6    : out std_logic_vector(7 downto 0); --saida sempre com 6 bit para branch
+    mri_sel     : in  std_logic; -- seletor para saber se vai usar 6 ou 8 bit   
     );
 end MRI;
 

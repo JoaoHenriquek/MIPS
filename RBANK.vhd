@@ -18,7 +18,7 @@ architecture rtl of RBANK is
     type reg_array is array (0 to 3) of std_logic_vector(15 downto 0); -- define um tipo de dado(reg_array), representa os 4 reg de 16 bit
     signal regs : reg_array := (others => (others => '0')); --Declara o sinl de armazenamento e inicializa todos os bits de todos os registradores com 0
 begin 
-    process(clk,rbank_out,rbank_out1,rbank_sel)
+    process(clk,rbank_out,rbank_out1,rbank_sel,rbank_mri)
     begin
         if rising_edge(clk) and rbank_sel = '1' then
             case out_sel is
@@ -52,6 +52,18 @@ begin
                 when "1001" =>
                     rbank_out  <= r3;
                     rbank_out1 <= r3;
+                when "1010" => -----------------MRI sai para o registrador B para casos de branch
+                    rbank_out  <= r0; -- acho que da para fazer um jump com soma com o hardware EX: jump r3 + 25
+                    rbank_out1 <= rbank_mri;
+                when "1011" =>
+                    rbank_out  <= r1;
+                    rbank_out1 <= rbank_mri;
+                when "1010" =>
+                    rbank_out  <= r2;
+                    rbank_out1 <= rbank_mri;
+                when "1011" =>
+                    rbank_out  <= r3;
+                    rbank_out1 <= rbank_mri;
                 when others =>
                     rbank_out  <= (others => '0');
                     rbank_out1 <= (others => '0');
