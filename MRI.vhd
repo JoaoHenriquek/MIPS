@@ -12,9 +12,9 @@ begin
     process(mri_in, mri_sel)
     begin 
         if mri_sel <= '0' then
-            mri_out8 <= mri_in(7 downto 0); -- seletor 0 pega 8 bit
+            mri_out8 <= mri_in(11 downto 0); -- seletor 0 pega 8 bit
         else mri_sel <= '1' then    
-            mri_out6 <= mri_in(5 downto 0); -- seletor 1 pega 6 bit
+            mri_out6 <= mri_in(7 downto 0); -- seletor 1 pega 6 bit
         end if;
     end process;
 end rtl;   

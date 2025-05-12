@@ -1,3 +1,6 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
 entity Reg_ins is
     port (
         ri_in       :   in std_logic_vector(15 downto 0);
@@ -5,7 +8,7 @@ entity Reg_ins is
         ri_out_rs   :   out std_logic_vector(11 downto 10);
         ri_out_rt   :   out std_logic_vector(9 downto 8);
         ri_out_rd   :   out std_logic_vector(7 downto 6); --saida separa as partes das instruções para entrar no banco de registradores
-        ri_sel      :   in std_logic;                     --nao tenho certeza se vai ser usado mas ja deixei pronto
+        ri_sel      :   in std_logic                   --nao tenho certeza se vai ser usado mas ja deixei pronto
     );
 end Reg_ins;
 
