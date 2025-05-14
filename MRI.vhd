@@ -1,3 +1,6 @@
+library mito;
+use work.mito_pkg.all;
+
 entity MRI is
     port (
     mri_in      : in  std_logic_vector(15 downto 0);

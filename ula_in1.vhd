@@ -1,5 +1,7 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+library mito;
+use work.mito_pkg.all;
 
 entity ula_in1 is
     Port (

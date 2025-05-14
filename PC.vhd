@@ -1,3 +1,6 @@
+library mito;
+use work.mito_pkg.all;
+
 entity PC is
     Port (
         clk    : in  STD_LOGIC;

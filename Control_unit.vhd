@@ -2,6 +2,8 @@ end controlUnit;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
+library mito;
+use work.mito_pkg.all;
 
 entity control_unit is
     Port (
@@ -46,7 +48,7 @@ architecture Behavioral of control_unit is
     
     signal current_state, next_state : State_Type;
     
-    -- Opcodes das instruções (exemplo - ajuste conforme sua codificação):
+    -- Opcodes das instruções (exemplo:
     constant OP_ADD   : STD_LOGIC_VECTOR(3 downto 0) := "0000";
     constant OP_SUB   : STD_LOGIC_VECTOR(3 downto 0) := "0001";
     constant OP_AND   : STD_LOGIC_VECTOR(3 downto 0) := "0010";

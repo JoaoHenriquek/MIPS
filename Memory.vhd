@@ -8,6 +8,8 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.all;
 use IEEE.NUMERIC_STD.ALL;
+library mito;
+use work.mito_pkg.all;
 
 entity Memory is
 	port(		
